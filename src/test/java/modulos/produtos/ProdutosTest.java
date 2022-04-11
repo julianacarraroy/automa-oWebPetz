@@ -25,26 +25,42 @@ public class ProdutosTest {
         // maximizar a tela
         this.navegador.manage().window().maximize();
 
-        // Vou definir um tempo de espera padrao de 30 segundos
-        this.navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        // Vou definir um tempo de espera padrao de 15 segundos
+        this.navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // Navegar para a pagina da Petz
-        this.navegador.get("https://www.petz.com.br/");
+        this.navegador.get("http://automationpractice.com/index.php");
 
     }
 
     @Test
     @DisplayName("Validar Sul, Sudeste e Centro-Oeste: frete grátis nos pedidos acima de R$ 119")
     public void testeValidarFreteSSCOcomValor119(){
-        navegador.findElement(By.cssSelector("div.log-in")).click();
-        navegador.findElement(By.cssSelector("a[class=button-login]")).click();
+        //Adicionar produto no carrinho
+        navegador.findElement(By.cssSelector("input[id=search_query_top]")).click();
+        navegador.findElement(By.cssSelector("input[id=search_query_top]")).sendKeys("Blouse");
+
+
+        //Altarar a quantidade
+        //Verificar o valor
+        //Adicionar mais um produto
+        //Verificar valor
+        //Deletar produto
+
+        /*navegador.findElement(By.cssSelector("input[id=search]")).click();
+        navegador.findElement(By.cssSelector("input[id=search]")).sendKeys("Ração Farmina N&D Prime para Cães Adultos de Raças Pequenas Sabor Cordeiro e Blueberry");
+        navegador.findElement(By.cssSelector("button[id=aceiteLgpd]")).click();
+        navegador.findElement(By.cssSelector("button[id=adicionarAoCarrinho]")).click();
+        navegador.findElement(By.cssSelector("input[id=cepSearch]")).click();
+        //navegador.findElement(By.cssSelector("input[id=cepSearch]")).sendKeys("88056511");
         //navegador.findElement(By.cssSelector("input[id='loginEmail']")).click();
         //navegador.findElement(By.cssSelector("input[id='loginEmail']")).sendKeys("julianacarraroy@gmail.com");
-        navegador.findElement(By.cssSelector("input[id='loginEntrar']")).isDisplayed();
-        navegador.findElement(By.cssSelector("input[id='loginEntrar']")).click();
+        //navegador.findElement(By.cssSelector("input[id='loginEntrar']")).isDisplayed();
+        //navegador.findElement(By.cssSelector("input[id='loginEntrar']")).click();
         JavascriptExecutor executor = (JavascriptExecutor)navegador;
-        executor.executeScript("arguments[0].click();",  navegador.findElement(By.cssSelector("input[id='loginEntrar']")));
-
+        executor.executeScript("arguments[0].click();",  navegador.findElement(By.cssSelector("input[id='cepSearch']")));
+        navegador.findElement(By.cssSelector("input[id=cepSearch]")).sendKeys("88056511");
+        */
     }
 
 
