@@ -13,7 +13,7 @@ public class HomePage {
 
     public ProdutoPage pesquisarProdutoEspecifico(String nomeProduto){
         navegador.findElement(By.id("search_query_top")).click();
-        navegador.findElement(By.id("search_query_top")).sendKeys("Blouse");
+        navegador.findElement(By.id("search_query_top")).sendKeys(nomeProduto);
         navegador.findElement(By.cssSelector(".ac_even>strong")).click();
 
         return new ProdutoPage(navegador);

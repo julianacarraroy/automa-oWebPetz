@@ -17,5 +17,10 @@ public class ProdutoPage {
         return new CarrinhoPage(navegador);
     }
 
+    public PopUpProdutoPage clicarNoBotaoEnviarParaOAmigo(){
+        navegador.findElement(By.id("send_friend_button")).click();
+
+        return new PopUpProdutoPage(navegador);
+    }
 
 }

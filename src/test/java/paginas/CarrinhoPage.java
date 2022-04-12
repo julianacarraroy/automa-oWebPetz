@@ -18,7 +18,7 @@ public class CarrinhoPage {
     }
 
     public String verificarSaldoTotalSemFrete(){
-        // Encontrar uma maneira mais elegante de aguardar a mudanca do saldo em tela
+        //Tempo de espera explícito para aguardar o componente aparecer na tela
         try {
             TimeUnit.SECONDS.sleep(6);
         } catch(InterruptedException ie) {
@@ -29,4 +29,22 @@ public class CarrinhoPage {
 
         return resultado;
     }
+    public CarrinhoPage excluirProduto(){
+        navegador.findElement(By.className("icon-trash")).click();
+
+        return this;
+    }
+
+    public String capturarMensagem(){
+        try {
+            TimeUnit.SECONDS.sleep(6);
+        } catch(InterruptedException ie) {
+            Thread.currentThread().interrupt();
+        }
+        String alerta = navegador.findElement(By.cssSelector(".alert-warning")).getText();
+
+        return alerta;
+    }
+
 }
+
