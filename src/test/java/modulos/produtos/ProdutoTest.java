@@ -50,6 +50,7 @@ public class ProdutoTest {
                 .verificarSaldoTotalSemFrete();
 
         Assertions.assertEquals("$54.00", valorSemFrete);
+
         /*
         navegador.findElement(By.id("search_query_top")).click();
         navegador.findElement(By.id("search_query_top")).sendKeys("Blouse");
@@ -72,7 +73,33 @@ public class ProdutoTest {
         System.out.println(resultado);
 
         */
+    }
+    @Test
+    @DisplayName("Enviar produto para um amigo por E-mail")
+    public void testEnviarProdutoParaEmailDeAmigo(){
+        navegador.findElement(By.id("search_query_top")).click();
+        navegador.findElement(By.id("search_query_top")).sendKeys("Faded Short Sleeve T-shirts");
+        navegador.findElement(By.cssSelector(".ac_even>strong")).click();
+        navegador.findElement(By.id("send_friend_button")).click();
+        navegador.findElement(By.id("friend_name")).sendKeys("Joao");
+        navegador.findElement(By.id("friend_email")).sendKeys("joao@teste.com");
+        navegador.findElement(By.cssSelector("#sendEmail > span")).click();
 
+        String texto = navegador.findElement(By.cssSelector(".fancybox-inner>p")).getText();
+        System.out.println(texto);
+    }
+
+    @Test
+    @DisplayName("Mudar nome do teste")
+    public void testValidarCamposObrigatoriosParaEnviarEmailParaAmigo(){
+        navegador.findElement(By.id("search_query_top")).click();
+        navegador.findElement(By.id("search_query_top")).sendKeys("Faded Short Sleeve T-shirts");
+        navegador.findElement(By.cssSelector(".ac_even>strong")).click();
+        navegador.findElement(By.id("send_friend_button")).click();
+        navegador.findElement(By.cssSelector("#sendEmail > span")).click();
+
+        String texto = navegador.findElement(By.cssSelector("#send_friend_form_content>div")).getText();
+        System.out.println(texto);
     }
 
     @AfterEach
