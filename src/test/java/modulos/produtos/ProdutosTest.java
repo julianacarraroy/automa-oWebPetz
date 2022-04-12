@@ -7,6 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 @DisplayName("Teste web do modulo de frete")
 public class ProdutosTest {
@@ -16,9 +21,10 @@ public class ProdutosTest {
     @BeforeEach
     public void beforeEach(){
         // abrir o navegador
-        System.setProperty("webdriver.chrome.driver", "C:\\Driverbrowser\\chromedriver_win32 (1)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver100\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
+        options.addArguments("start-maximized");
 
         this.navegador = new ChromeDriver(options);
 
@@ -28,8 +34,12 @@ public class ProdutosTest {
         // Vou definir um tempo de espera padrao de 15 segundos
         this.navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        //this.navegador.manage().window().maximize();
+
         // Navegar para a pagina da Petz
         this.navegador.get("http://automationpractice.com/index.php");
+
+
 
     }
 
@@ -37,6 +47,8 @@ public class ProdutosTest {
     @DisplayName("Validar Sul, Sudeste e Centro-Oeste: frete grátis nos pedidos acima de R$ 119")
     public void testeValidarFreteSSCOcomValor119(){
         //Adicionar produto no carrinho
+        navegador.findElement(By.id("search_query_top")).click();
+        navegador.findElement(By.id("search_query_top")).sendKeys("dfasdf");
         navegador.findElement(By.cssSelector("input[id=search_query_top]")).click();
         navegador.findElement(By.cssSelector("input[id=search_query_top]")).sendKeys("Blouse");
 
