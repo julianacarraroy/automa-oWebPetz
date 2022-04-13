@@ -19,7 +19,7 @@ public class ProdutoTest {
     @BeforeEach
     public void beforeEach(){
         // abrir o navegador
-        System.setProperty("webdriver.chrome.driver", "C:\\Driverbrowser\\chromedriver_win32 (1)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\DRIVER\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         options.addArguments("start-maximized");
