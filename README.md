@@ -6,10 +6,10 @@ Esse é um repositório que contém a automação de alguns testes Web de um E-c
 
 ## 🤖 Tecnologias Utilizadas
 
--   Java (https://www.oracle.com/java/technologies/downloads/)
--   JUnit (https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.8.0-M1)
--  Selenium Webdriver (https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.1.3)
--  Maven (https://maven.apache.org/)
+-   [Java](https://www.oracle.com/java/technologies/downloads/)
+-   [JUnit](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.8.0-M1)
+-  [Selenium Webdriver](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.1.3)
+-  [Maven](https://maven.apache.org/)
 
 ## ⚙️ Testes Automatizados
 
