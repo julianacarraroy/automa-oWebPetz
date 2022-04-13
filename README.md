@@ -31,7 +31,7 @@ b) Testes de enviar página do produto a um amigo: com o preenchimento do formul
     -   Armazenamos os métodos utilizados para as ações do envio de e-mail na classe PopUpProdutoPage.
 -   Nesse projeto fazemos uso do JUnit 5, o que nos dá a possibilidade de usar a anotação  _@DisplayName_  para dar descrições em português para nossos testes.
 
-##Mind Map da estratégia de testes
+## Mind Map da estratégia de testes
 <p align="center">
   <img alt="Source Code Preview" src="github/E-Commerce.png" width="100%">
 </p>
