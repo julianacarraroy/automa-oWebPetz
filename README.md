@@ -1,6 +1,6 @@
 # Automação Web E-commerce
 
-*Automação desenvolvida durante o Programa de Testes e Qualidade de Software de  [Julio de Lima](https://www.juliodelima.com.br/)*
+*Automação desenvolvida durante o Programa de Testes e Qualidade de Software de  [Julio de Lima](http://www.juliodelima.com.br)*
 
 Esse é um repositório que contém a automação de alguns testes Web de um E-commerce para prática de automação web.  Os subtópicos abaixo descrevem algumas decisões tomadas na estruturação do projeto.
 
