@@ -1,28 +1,32 @@
-# Lojinha API Automação
-Automação de testes de API Web de um software denominado Lojinha. Os sub-tópicos abaixo descrevem algumas decisões tomadas na estruturação do projeto.
+# Automação Web E-commerce
 
+*Automação desenvolvida durante o Programa de Testes e Qualidade de Software de  [Julio de Lima](https://www.juliodelima.com.br/)*
 
-## 🛰️ Tecnologias Utilizadas   
-- [Java](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html)
-  
-- [JUnit](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.8.0-M1)
-  
-- [Selenium](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.0.0-rc-2)
-  
-- [Maven](https://maven.apache.org/)
+Esse é um repositório que contém a automação de alguns testes Web de um E-commerce para prática de automação web.  Os subtópicos abaixo descrevem algumas decisões tomadas na estruturação do projeto.
 
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+## 🤖 Tecnologias Utilizadas
 
-## 🤖 Testes Automatizados
-Testes para validar as partições de equivalência relacionadas ao valor do produto na Lojinha, que estão vinculados diretamente a regra de negócio que diz que o valor do produto deve estar entre R$ 0,01 e R$ 7.000,00.
+-   Java (https://www.oracle.com/java/technologies/downloads/)
+-   JUnit (https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.8.0-M1)
+-  Selenium Webdriver (https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.1.3)
+-  Maven (https://maven.apache.org/)
 
-## 📝 Notas Gerais
+## ⚙️ Testes Automatizados
 
-- Sempre utilizamos a anotação Before Each para abrir o navegador que será utilizado posteriormente nos métodos de teste, assim, evitamos abrir o navegador várias vezes.
-- Sempre utilizamos a anotação After Each para fechar o navegador que foi utilizado pelos métodos de teste, assim, evitando ter diversos navegadores abertos.
-- Utilizamos Page Objects que as páginas implementadas nos testes possam ser reaproveitadas, facilitando os testes futuros.
-- Nesse projeto fazemos uso do JUnit 5, o que nos dá a possibilidade de usar a anotação DisplayName para dar descrições em português para nossos testes
+Os testes automatizados estão divididos entre:
+a) Testes de carrinho: com adição de produtos, alteração de quantidade e exclusão do mesmo;
+b) Testes de enviar página do produto a um amigo: com o preenchimento do formulário de envio;
 
 
 
-> 👍 Automação desenvolvida durante o Programa de Testes e Qualidade de Software de [Julio de Lima](https://www.juliodelima.com.br)
+## 📑 Notas gerais
+
+-   Sempre utilizamos a anotação  _@BeforeEach para realizar as ações de abrir o browser e navegar até o site da lojinha
+
+-   Trabalhamos com o *Page Objects*, criando classes para representar cada página
+
+    -   Armazenamos os métodos utilizados para busca de produto na classe HomePage;
+    -   Armazenamos os métodos utilizados para acesso às informações do produto na classe ProdutoPage;
+    -   Armazenamos os métodos utilizados nas ações de carrinho na classe CarrinhoPage;
+    -   Armazenamos os métodos utilizados para as ações do envio de e-mail na classe PopUpProdutoPage.
+-   Nesse projeto fazemos uso do JUnit 5, o que nos dá a possibilidade de usar a anotação  _@DisplayName_  para dar descrições em português para nossos testes.
